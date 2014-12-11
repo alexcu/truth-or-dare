@@ -7,24 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA56BF421A36FBB4005A8E4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA56BF411A36FBB4005A8E4A /* main.m */; };
+		08AC75FDA5F06EB2F57B5CE4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 043C643FB1545D30E1FA5619 /* libPods.a */; };
+		FA45BDDE1A37D1AE0088CF64 /* Console.m in Sources */ = {isa = PBXBuildFile; fileRef = FA45BDDD1A37D1AE0088CF64 /* Console.m */; };
+		FA6E87BC1A36FD3200EB8BBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87BB1A36FD3200EB8BBA /* main.m */; };
+		FA6E87C01A36FD5C00EB8BBA /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87BF1A36FD5C00EB8BBA /* Question.m */; };
+		FA6E87C31A3700A400EB8BBA /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87C21A3700A400EB8BBA /* NSMutableArray+Shuffling.m */; };
+		FA6E87C71A37061600EB8BBA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87C61A37061600EB8BBA /* Player.m */; };
+		FA6E87E81A370B0500EB8BBA /* QuestionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87E71A370B0500EB8BBA /* QuestionProvider.m */; };
+		FA6E87EA1A370CBA00EB8BBA /* questions.db in Resources */ = {isa = PBXBuildFile; fileRef = FA6E87CB1A3707D100EB8BBA /* questions.db */; };
+		FA6E87EB1A37152500EB8BBA /* questions.db in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6E87CB1A3707D100EB8BBA /* questions.db */; };
+		FA6E87EE1A3715A400EB8BBA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87ED1A3715A400EB8BBA /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FA56BF3C1A36FBB4005A8E4A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				FA6E87EB1A37152500EB8BBA /* questions.db in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		043C643FB1545D30E1FA5619 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C75E46365D48AAC09D7E75 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A2F6DE4521A3E93B6BFD2931 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FA45BDDC1A37D1AE0088CF64 /* Console.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Console.h; path = Utils/Console.h; sourceTree = "<group>"; };
+		FA45BDDD1A37D1AE0088CF64 /* Console.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Console.m; path = Utils/Console.m; sourceTree = "<group>"; };
 		FA56BF3E1A36FBB4005A8E4A /* TruthOrDare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TruthOrDare; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA56BF411A36FBB4005A8E4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA6E87BB1A36FD3200EB8BBA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Application/main.m; sourceTree = "<group>"; };
+		FA6E87BE1A36FD5C00EB8BBA /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Question.h; path = Models/Question.h; sourceTree = "<group>"; };
+		FA6E87BF1A36FD5C00EB8BBA /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Question.m; path = Models/Question.m; sourceTree = "<group>"; };
+		FA6E87C11A3700A400EB8BBA /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Shuffling.h"; path = "Utils/NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		FA6E87C21A3700A400EB8BBA /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Shuffling.m"; path = "Utils/NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
+		FA6E87C51A37061600EB8BBA /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Models/Player.h; sourceTree = "<group>"; };
+		FA6E87C61A37061600EB8BBA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
+		FA6E87CB1A3707D100EB8BBA /* questions.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = questions.db; sourceTree = "<group>"; };
+		FA6E87E61A370B0500EB8BBA /* QuestionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionProvider.h; path = Models/QuestionProvider.h; sourceTree = "<group>"; };
+		FA6E87E71A370B0500EB8BBA /* QuestionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionProvider.m; path = Models/QuestionProvider.m; sourceTree = "<group>"; };
+		FA6E87EC1A3715A400EB8BBA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Models/Game.h; sourceTree = "<group>"; };
+		FA6E87ED1A3715A400EB8BBA /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Models/Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +58,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08AC75FDA5F06EB2F57B5CE4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66E2252F36ABB1B235D720A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				043C643FB1545D30E1FA5619 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C00E61BD19BB3B57B1F34CF5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2F6DE4521A3E93B6BFD2931 /* Pods.debug.xcconfig */,
+				84C75E46365D48AAC09D7E75 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA56BF351A36FBB4005A8E4A = {
 			isa = PBXGroup;
 			children = (
 				FA56BF401A36FBB4005A8E4A /* TruthOrDare */,
 				FA56BF3F1A36FBB4005A8E4A /* Products */,
+				C00E61BD19BB3B57B1F34CF5 /* Pods */,
+				66E2252F36ABB1B235D720A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +103,46 @@
 		FA56BF401A36FBB4005A8E4A /* TruthOrDare */ = {
 			isa = PBXGroup;
 			children = (
-				FA56BF411A36FBB4005A8E4A /* main.m */,
+				FA6E87CB1A3707D100EB8BBA /* questions.db */,
+				FA6E87BD1A36FD4900EB8BBA /* Models */,
+				FA6E87BA1A36FD2000EB8BBA /* Application */,
+				FA6E87C41A3700B300EB8BBA /* Utils */,
 			);
 			path = TruthOrDare;
+			sourceTree = "<group>";
+		};
+		FA6E87BA1A36FD2000EB8BBA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E87BB1A36FD3200EB8BBA /* main.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		FA6E87BD1A36FD4900EB8BBA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E87BE1A36FD5C00EB8BBA /* Question.h */,
+				FA6E87BF1A36FD5C00EB8BBA /* Question.m */,
+				FA6E87C51A37061600EB8BBA /* Player.h */,
+				FA6E87C61A37061600EB8BBA /* Player.m */,
+				FA6E87E61A370B0500EB8BBA /* QuestionProvider.h */,
+				FA6E87E71A370B0500EB8BBA /* QuestionProvider.m */,
+				FA6E87EC1A3715A400EB8BBA /* Game.h */,
+				FA6E87ED1A3715A400EB8BBA /* Game.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FA6E87C41A3700B300EB8BBA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FA6E87C11A3700A400EB8BBA /* NSMutableArray+Shuffling.h */,
+				FA6E87C21A3700A400EB8BBA /* NSMutableArray+Shuffling.m */,
+				FA45BDDC1A37D1AE0088CF64 /* Console.h */,
+				FA45BDDD1A37D1AE0088CF64 /* Console.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA56BF451A36FBB4005A8E4A /* Build configuration list for PBXNativeTarget "TruthOrDare" */;
 			buildPhases = (
+				1977B8C473382C8F86713D17 /* Check Pods Manifest.lock */,
 				FA56BF3A1A36FBB4005A8E4A /* Sources */,
 				FA56BF3B1A36FBB4005A8E4A /* Frameworks */,
 				FA56BF3C1A36FBB4005A8E4A /* CopyFiles */,
+				B9E96C0FB2350E3D4E1F11FC /* Copy Pods Resources */,
+				FA6E87E91A370CB500EB8BBA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -113,12 +199,62 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		FA6E87E91A370CB500EB8BBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6E87EA1A370CBA00EB8BBA /* questions.db in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1977B8C473382C8F86713D17 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9E96C0FB2350E3D4E1F11FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA56BF3A1A36FBB4005A8E4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA56BF421A36FBB4005A8E4A /* main.m in Sources */,
+				FA6E87E81A370B0500EB8BBA /* QuestionProvider.m in Sources */,
+				FA6E87C71A37061600EB8BBA /* Player.m in Sources */,
+				FA6E87BC1A36FD3200EB8BBA /* main.m in Sources */,
+				FA6E87EE1A3715A400EB8BBA /* Game.m in Sources */,
+				FA6E87C01A36FD5C00EB8BBA /* Question.m in Sources */,
+				FA45BDDE1A37D1AE0088CF64 /* Console.m in Sources */,
+				FA6E87C31A3700A400EB8BBA /* NSMutableArray+Shuffling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,14 +337,24 @@
 		};
 		FA56BF461A36FBB4005A8E4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2F6DE4521A3E93B6BFD2931 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		FA56BF471A36FBB4005A8E4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84C75E46365D48AAC09D7E75 /* Pods.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -232,6 +378,7 @@
 				FA56BF471A36FBB4005A8E4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

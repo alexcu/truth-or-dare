@@ -14,8 +14,6 @@
 		FA6E87C31A3700A400EB8BBA /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87C21A3700A400EB8BBA /* NSMutableArray+Shuffling.m */; };
 		FA6E87C71A37061600EB8BBA /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87C61A37061600EB8BBA /* Player.m */; };
 		FA6E87E81A370B0500EB8BBA /* QuestionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87E71A370B0500EB8BBA /* QuestionProvider.m */; };
-		FA6E87EA1A370CBA00EB8BBA /* questions.db in Resources */ = {isa = PBXBuildFile; fileRef = FA6E87CB1A3707D100EB8BBA /* questions.db */; };
-		FA6E87EB1A37152500EB8BBA /* questions.db in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA6E87CB1A3707D100EB8BBA /* questions.db */; };
 		FA6E87EE1A3715A400EB8BBA /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6E87ED1A3715A400EB8BBA /* Game.m */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				FA6E87EB1A37152500EB8BBA /* questions.db in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +43,6 @@
 		FA6E87C21A3700A400EB8BBA /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Shuffling.m"; path = "Utils/NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 		FA6E87C51A37061600EB8BBA /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Models/Player.h; sourceTree = "<group>"; };
 		FA6E87C61A37061600EB8BBA /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
-		FA6E87CB1A3707D100EB8BBA /* questions.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = questions.db; sourceTree = "<group>"; };
 		FA6E87E61A370B0500EB8BBA /* QuestionProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionProvider.h; path = Models/QuestionProvider.h; sourceTree = "<group>"; };
 		FA6E87E71A370B0500EB8BBA /* QuestionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionProvider.m; path = Models/QuestionProvider.m; sourceTree = "<group>"; };
 		FA6E87EC1A3715A400EB8BBA /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Models/Game.h; sourceTree = "<group>"; };
@@ -103,7 +99,6 @@
 		FA56BF401A36FBB4005A8E4A /* TruthOrDare */ = {
 			isa = PBXGroup;
 			children = (
-				FA6E87CB1A3707D100EB8BBA /* questions.db */,
 				FA6E87BD1A36FD4900EB8BBA /* Models */,
 				FA6E87BA1A36FD2000EB8BBA /* Application */,
 				FA6E87C41A3700B300EB8BBA /* Utils */,
@@ -204,7 +199,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6E87EA1A370CBA00EB8BBA /* questions.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

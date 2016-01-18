@@ -41,14 +41,28 @@
         return nil;
     }
     FMDatabase *db     = [FMDatabase databaseWithPath: databaseFilePath];
-    if (![db open] || [[db lastError] code] != 0)
+    
+    if (![db open])
+    {
+        *error = [NSError errorWithDomain:@"truth-or-dare"
+                                     code:0
+                                 userInfo:@{@"message": @"Failed to open database"}];
+        [db close];
+        return nil;
+    }
+    
+    // Execute test query to see if OK
+    [db executeQuery:@"SELECT * FROM sqlite_master"];
+    if ([[db lastError] code] != 0)
     {
         *error = [NSError errorWithDomain:@"truth-or-dare"
                                      code:0
                                  userInfo:@{@"message": [db lastErrorMessage]}];
-        nil;
-        ;
+        [db closeOpenResultSets];
+        [db close];
+        return nil;
     }
+    
     return db;
 }
 
@@ -88,10 +102,12 @@
         qn.type        = type;
         
         // Return this question
+        [resultSet close];
         [db close];
         return qn;
     }
     
+    [resultSet close];
     [db close];
     return nil;
 }

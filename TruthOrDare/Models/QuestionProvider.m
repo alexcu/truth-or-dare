@@ -41,11 +41,11 @@
         return nil;
     }
     FMDatabase *db     = [FMDatabase databaseWithPath: databaseFilePath];
-    if (![db open])
+    if (![db open] || [[db lastError] code] != 0)
     {
         *error = [NSError errorWithDomain:@"truth-or-dare"
                                      code:0
-                                 userInfo:@{@"message": @"File provided is not a readable SQLite file or it is protected."}];
+                                 userInfo:@{@"message": [db lastErrorMessage]}];
         nil;
         ;
     }

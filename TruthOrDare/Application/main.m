@@ -221,6 +221,7 @@ int main(int argc, const char * argv[]) {
         [[QuestionProvider defaultProvider] dataStore: &error];
         if (error != nil)
         {
+            [Console write:error.userInfo[@"message"] withColor:RED];
             return 1;
         }
         

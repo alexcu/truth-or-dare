@@ -20,6 +20,29 @@ void welcome_message()
     [Console writeLine:@"!"];
 }
 
+NSString* determine_database_file_path(const char * argv[])
+{
+    NSString* path;
+    if (argv[1] != nil)
+    {
+        path = [NSString stringWithCString:argv[1] encoding: NSUTF8StringEncoding];
+        if ([path length] > 0)
+        {
+            return path;
+        }
+    }
+    [Console write:@"No database file provided. Checking for questions.db..." withColor:YELLOW];
+    NSString* cwd = [[NSFileManager defaultManager] currentDirectoryPath];
+    path = [NSString stringWithFormat:@"%@/questions.db", cwd];
+    BOOL questionsDbExists = [[NSFileManager defaultManager] fileExistsAtPath: path];
+    if (questionsDbExists)
+    {
+        return path;
+    }
+    [Console write:[NSString stringWithFormat:@"Can't find a questions.db file in %@.\nYou need to place a questions.db file here or provide a location to a SQLite database containing the questions when executing. E.g.:\n\n./TruthOrDare /path/to/questions.db\n\n.", cwd] withColor:RED];
+    return nil;
+}
+
 NSInteger read_points_to_win()
 {
     [Console write:@"Enter the number of points to win the game: "];
@@ -188,6 +211,18 @@ int main(int argc, const char * argv[]) {
         // TruthOrDare --points [points] --mode [mode] --females [females...] --males
         [Console clearConsole];
         welcome_message();
+        
+        NSString *dbFilePath = determine_database_file_path(argv);
+        
+        [[QuestionProvider defaultProvider] setDatabaseFilePath: dbFilePath];
+        
+        // Try and see if valid file
+        NSError *error = nil;
+        [[QuestionProvider defaultProvider] dataStore: &error];
+        if (error != nil)
+        {
+            return 1;
+        }
         
         NSInteger ptw = read_points_to_win();
         NSArray *players = read_players();

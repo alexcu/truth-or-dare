@@ -35,7 +35,7 @@
         self.players = aPlayers;
         self.pointsToWin = aPointsToWin;
         _currentPlayerIdx = 0;
-        _questionProvider = [[QuestionProvider alloc] init];
+        _questionProvider = [QuestionProvider defaultProvider];
         _questionProvider.bank = types;
         _questionProvider.playerCount = self.players.count;
         [self advanceToNextPlayer];

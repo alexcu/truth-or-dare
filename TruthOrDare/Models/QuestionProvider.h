@@ -16,6 +16,12 @@ typedef enum QuestionBank { CLEAN, NAUGHTY, DAREDEVIL } QuestionBank;
 
 @property NSInteger     playerCount;
 @property QuestionBank  bank;
+@property NSString*     databaseFilePath;
+
+/**
+ * Gets the default question provider
+ */
++ (QuestionProvider *) defaultProvider;
 
 /**
  * Gets a question from the given question bank
@@ -23,8 +29,8 @@ typedef enum QuestionBank { CLEAN, NAUGHTY, DAREDEVIL } QuestionBank;
 - (Question*) randomQuestion:(QuestionType) type;
 
 /**
- * Gets the default question provider
+ * Returns the datastore for the provider
  */
-+ (QuestionProvider *) defaultProvider;
+- (FMDatabase *) dataStore:(NSError **) error;
 
 @end

@@ -10,21 +10,11 @@
 
 @interface QuestionProvider ()
 
-+ (FMDatabase *) getDataStore;
 - (NSString *) tableNameForBank:(QuestionBank) qnBank;
 
 @end
 
 @implementation QuestionProvider
-
-+ (FMDatabase *) getDataStore
-{
-    NSString *dbPath   = [[NSBundle mainBundle] pathForResource:@"questions" ofType:@"db"];
-    FMDatabase *db     = [FMDatabase databaseWithPath:dbPath];
-    if (![db open])
-        return nil;
-    return db;
-}
 
 + (QuestionProvider *) defaultProvider
 {
@@ -38,6 +28,29 @@
 
 @synthesize playerCount;
 @synthesize bank;
+@synthesize databaseFilePath;
+
+- (FMDatabase *) dataStore:(NSError **) error
+{
+    BOOL fileExists    = [[NSFileManager defaultManager] fileExistsAtPath: databaseFilePath];
+    if (!fileExists)
+    {
+        *error = [NSError errorWithDomain:@"truth-or-dare"
+                                     code:0
+                                 userInfo:@{@"message": @"No such file exists for database file"}];
+        return nil;
+    }
+    FMDatabase *db     = [FMDatabase databaseWithPath: databaseFilePath];
+    if (![db open])
+    {
+        *error = [NSError errorWithDomain:@"truth-or-dare"
+                                     code:0
+                                 userInfo:@{@"message": @"File provided is not a readable SQLite file or it is protected."}];
+        nil;
+        ;
+    }
+    return db;
+}
 
 - (NSString*) tableNameForBank:(QuestionBank)qnBank
 {
@@ -55,10 +68,11 @@
 {
     // SQL for random question in bank
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE TYPE = :type ORDER BY RANDOM() LIMIT 1", [self tableNameForBank:self.bank]];
-    FMDatabase *db = [QuestionProvider getDataStore];
-    if (!db)
+    NSError *error = nil;
+    FMDatabase *db = [self dataStore: &error];
+    if (error != nil)
     {
-        NSLog(@"Error!");
+        [NSException raise:@"bad-database-error" format:@"Error: %@", error.userInfo[@"message"]];
         return nil;
     }
     
